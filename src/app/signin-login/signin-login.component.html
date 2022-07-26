@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Signup-Login Page</title>
+    <meta charset="UTF-8" />
+    <title>Slide Navbar</title>
+    <link rel="stylesheet" type="text/css" href="signin-login.component.css" />
+  </head>
+  <body>
+    <div class="main">
+      <input type="checkbox" id="chk" aria-hidden="true"/>
+      <div class="signup">
+        <label for="chk" aria-hidden="true">Sign up</label>
+
+        <input
+          type="text"
+          name=""
+          placeholder="UserName"
+          required=""
+          id="username"
+         [(ngModel)]="username"
+        />
+       
+
+        <input
+          type="email"
+          name=""
+          placeholder="Email"
+          required=""
+          id="email"
+          [(ngModel)]="email"
+        />
+
+        <input
+          type="text"
+          name=""
+          placeholder="Mobile Number"
+          required=""
+          id="mobileNumber"
+          [(ngModel)]="mobileNumber"
+        />
+
+        <input
+          type="password"
+          placeholder="Password"
+          required=""
+          name=""
+          id="password"
+          [(ngModel)]="password"
+        />
+
+        <button id="btn" style="margin-top: 32px ;" (click)="ClickHere()">Sign up</button>
+      </div>
+      <div class="login">
+        <label for="chk" aria-hidden="true">Login</label>
+        <input
+          type="username"
+          name="username"
+          id="username"
+          placeholder="Username"
+          required=""
+          
+        />
+
+        <input
+          type="password"
+          name="passwordlogin"
+          id="passwordlogin"
+          placeholder="Password"
+          required=""
+        />
+        
+
+        <button id="login">Login</button>
+      </div>
+    </div>
+  </body>
+  <div *ngIf ="isVisible">
+
+  <table   class="table table-hover table-striped table-bordered" 
+  width="100%">
+
+  <thead>
+    <tr>
+      <th>UserName</th>
+        <th>Email</th>
+        <th>MobileNumber</th>
+        <th>Password</th>
+    </tr>
+  </thead>
+  <tbody >
+    <tr class="table table-hover table-striped table-bordered" width="100%"  *ngFor="let items  of List">
+      <td>{{items.username}} </td>
+            <td> {{items.email}} </td>
+            <td> {{items.mobileNumber}}</td>
+            <td>{{items.password}} </td>
+        </tr>
+        </tbody>
+  </table>
+</div>
+
+
+  <!-- <div>
+    <div *ngIf ="isVisible">
+      <thead>
+        <tr>
+        <th>UserName</th>
+        <th>Email</th>
+        <th>MobileNumber</th>
+        <th>Password</th>
+      </tr>
+      </thead>
+     
+     
+      <table >
+        <tbody>
+          <tr  *ngFor="let items  of List">
+            <td>{{items.username}} </td>
+            <td> {{items.email}} </td>
+            <td> {{items.mobileNumber}}</td>
+            <td>{{items.password}} </td>
+          </tr>
+        </tbody>
+      </table> -->
+   
+   
+    
+  
+ 
+  <button (click)="hideList()">
+    Click to Hide List
+  </button>
+</html>
